@@ -21,3 +21,16 @@ text.addEventListener('input', function() {
         textError.textContent = "";
     else textError.textContent = "Name is Incorrect";
 });
+
+/**
+ * To validate the email field using the REGEX expression
+ */
+
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+email.addEventListener('input', function() {
+    let emailRegex = RegExp("^[A-Za-z0-9!#$%&*+\\\\=?`{|}~^-]+(?:\\.[A-Za-z!#$%&*+\\\\=?`{|}~^-]+)*@(?:([0-9-]{1}|[a-zA-Z]{3,5})\\.)+[a-zA-Z]{2,3}$");
+    if (emailRegex.test(email.value))
+        emailError.textContent = "";
+    else emailError.textContent = "Email is Incorrect";
+});
