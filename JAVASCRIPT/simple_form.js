@@ -34,3 +34,24 @@ email.addEventListener('input', function() {
         emailError.textContent = "";
     else emailError.textContent = "Email is Incorrect";
 });
+/**
+ * To validate the number field using the REGEX expression
+ */
+const number = document.querySelector('#number');
+const numberError = document.querySelector('.number-error');
+number.addEventListener('input', function() {
+    let numberRegex = RegExp('^[0-9]+$');
+    if (numberRegex.test(number.value)) numberError.textContent = "";
+    else numberError.textContent = "Number is Incorrect";
+});
+
+/**
+ * To validate the telephone field using the REGEX expression
+ */
+const tel = document.querySelector('#tel');
+const telError = document.querySelector('.tel-error');
+tel.addEventListener('input', function() {
+    let telRegex = RegExp('^([91]{2}[ ])?[0-9]{10}$');
+    if (telRegex.test(tel.value)) telError.textContent = "";
+    else telError.textContent = "Telephone Number is Incorrect";
+});
