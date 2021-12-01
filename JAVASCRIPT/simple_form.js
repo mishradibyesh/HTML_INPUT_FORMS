@@ -55,3 +55,13 @@ tel.addEventListener('input', function() {
     if (telRegex.test(tel.value)) telError.textContent = "";
     else telError.textContent = "Telephone Number is Incorrect";
 });
+/**
+ * To validate the password field using the REGEX expression
+ */
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+pwd.addEventListener('input', function() {
+    let pwdRegex = RegExp('^[a-z A-Z 0-9 @#$%^&+=].{8,}$');
+    if (pwdRegex.test(pwd.value)) pwdError.textContent = "";
+    else pwdError.textContent = "Password is Incorrect";
+});
